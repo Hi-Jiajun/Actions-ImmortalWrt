@@ -20,7 +20,7 @@ jobs:
 
             - name: Copy config to source code
               run: |
-                  cp -f Immortalwrt.config feeds.conf.default diy.sh $REPO_NAME/
+                  cp -f ImmortalWrt.config feeds.conf.default diy.sh $REPO_NAME/
 
             - name: Install the software packages required for compilation
               run: |
@@ -35,13 +35,13 @@ jobs:
 
             - name: Copy config to source code
               run: |
-                  cp -f Immortalwrt.config feeds.conf.default diy.sh $REPO_NAME/
+                  cp -f ImmortalWrt.config feeds.conf.default diy.sh $REPO_NAME/
 
             - name: Upload config before build
               uses: actions/upload-artifact@v3
               with:
                   name: config before build
-                  path: Immortalwrt.config
+                  path: ImmortalWrt.config
 
             - name: Build immortalwrt
               run: |
