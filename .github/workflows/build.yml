@@ -1,10 +1,10 @@
-name: Build immortalwrt
+name: Build ImmortalWrt
 
 on:
     workflow_dispatch:
 
 env:
-    CLONE_COMMAND: git clone -b v23.05.2 --depth 1 https://github.com/immortalwrt/immortalwrt
+    CLONE_COMMAND: git clone -b v23.05.2 --single-branch --filter=blob:none https://github.com/immortalwrt/immortalwrt
     REPO_NAME: immortalwrt
 
 jobs:
@@ -60,5 +60,5 @@ jobs:
             - name: Upload build
               uses: actions/upload-artifact@v3
               with:
-                  name: immortalwrt_build_files
+                  name: ImmortalWrt_build_files
                   path: targets
