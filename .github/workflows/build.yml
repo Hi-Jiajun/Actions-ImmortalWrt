@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
 
 env:
-    CLONE_COMMAND: git clone -b mt7986 --depth 1 https://github.com/padavanonly/immortalwrtARM
+    CLONE_COMMAND: git clone -b x86/64 --depth 1 https://github.com/padavanonly/immortalwrtARM
     REPO_NAME: immortalwrtARM
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
 
             - name: Copy config to source code
               run: |
-                  cp -f .config feeds.conf.default diy.sh $REPO_NAME/
+                  cp -f ImmortalWrt.config feeds.conf.default diy.sh $REPO_NAME/
 
             - name: Install the software packages required for compilation
               run: |
@@ -35,13 +35,13 @@ jobs:
 
             - name: Copy config to source code
               run: |
-                  cp -f .config feeds.conf.default diy.sh $REPO_NAME/
+                  cp -f ImmortalWrt.config feeds.conf.default diy.sh $REPO_NAME/
 
             - name: Upload config before build
               uses: actions/upload-artifact@v3
               with:
                   name: config before build
-                  path: .config
+                  path: ImmortalWrt.config
 
             - name: Build immortalwrtARM
               run: |
